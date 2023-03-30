@@ -1,0 +1,180 @@
+@import url(/assets/css/_reset.scss);
+
+:root {
+  --input-color: #99a3ba;
+  --input-border: #cdd9ed;
+  --input-background: #fff;
+  --input-placeholder: #cbd1dc;
+
+  --input-border-focus: #275efe;
+
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #eef4ff;
+
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #678efe;
+}
+
+.box {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: auto;
+  width: 60%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .box-left {
+    padding: 40px;
+
+    .inputs {
+      padding-top: 25px;
+      padding-bottom: 25px;
+
+      .form-field {
+        display: block;
+        width: 100%;
+        padding: 8px 16px;
+        line-height: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        border-radius: 6px;
+        color: var(--input-color);
+        border: 1px solid var(--input-border);
+        background: var(--input-background);
+        transition: border 0.3s ease;
+        &::placeholder {
+          color: var(--input-placeholder);
+        }
+        &:focus {
+          outline: none;
+          border-color: var(--input-border-focus);
+        }
+      }
+
+      .form-group {
+        position: relative;
+        display: flex;
+        width: 100%;
+        & > span,
+        .form-field {
+          white-space: nowrap;
+          display: block;
+          &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+          }
+          &:first-child {
+            border-radius: 6px 0 0 6px;
+          }
+          &:last-child {
+            border-radius: 0 6px 6px 0;
+          }
+          &:not(:first-child) {
+            margin-left: -1px;
+          }
+        }
+        .form-field {
+          position: relative;
+          z-index: 1;
+          flex: 1 1 auto;
+          width: 1%;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        & > span {
+          text-align: center;
+          padding: 8px 12px;
+          font-size: 14px;
+          line-height: 25px;
+          color: var(--group-color);
+          background: var(--group-background);
+          border: 1px solid var(--group-border);
+          transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+        }
+        &:focus-within {
+          & > span {
+            color: var(--group-color-focus);
+            background: var(--group-background-focus);
+            border-color: var(--group-border-focus);
+          }
+        }
+      }
+    }
+  }
+
+  .box-right {
+
+    p{
+        font-family: "JetBrains Mono", monospace;
+
+    }
+    .line {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      height: 2px;
+      background-color: grey;
+    }
+
+    .payment-box {
+      span {
+        margin-right: 5px;
+        font-family: "JetBrains Mono", monospace;
+
+      }
+    }
+
+    button {
+      margin-top: 10px;
+
+      align-items: center;
+      appearance: none;
+      background-color: #fcfcfd;
+      border-radius: 4px;
+      border-width: 0;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+      box-sizing: border-box;
+      color: #36395a;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      overflow: hidden;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      transition: box-shadow 0.15s, transform 0.15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      will-change: box-shadow, transform;
+      font-size: 18px;
+    }
+
+    button:focus {
+      box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    }
+
+    button:hover {
+      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      box-shadow: #d6d6e7 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+  }
+}
